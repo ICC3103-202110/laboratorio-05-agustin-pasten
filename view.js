@@ -20,7 +20,7 @@ function getTitle(){
 }
 
 function inputBillAmount(value){
-    let billAmount = prompt('Bill Amount? ('+value+') ');
+    let billAmount = prompt(chalk.green("¿ ")+'Bill Amount? '+ chalk.gray('('+value+') ' ));
     if (billAmount===""){
         billAmount =value
     }
@@ -31,7 +31,7 @@ function inputBillAmount(value){
 }
 
 function inputTip(value){
-    let tip = prompt('Tip(%)? ('+value+') ')
+    let tip = prompt(chalk.green("¿ ")+'Tip(%)? '+ chalk.gray('('+value+') ' ))
     if (tip===""){
         tip = value
     }
@@ -49,11 +49,19 @@ function getTable(amount,tip,realTip,total){
     return printTable(testCases)
   }
 
+function afterInputBillAmount(amount){
+    return chalk.green("¿ ")+'Bill Amount? '+ chalk.blue('('+amount+') ' )
+}
 
+function afterInputTip(tip){
+    return chalk.green("¿ ")+'Tip(%)? '+ chalk.blue('('+tip+') ' )
+}
 
 module.exports = {
     getTitle,
     getTable,
     inputBillAmount,
-    inputTip
+    inputTip,
+    afterInputBillAmount,
+    afterInputTip
 }
