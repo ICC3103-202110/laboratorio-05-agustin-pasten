@@ -1,6 +1,8 @@
 const figlet = require('figlet')
 const chalk = require('chalk')
-const inquirer = require('inquirer')
+//const inquirer = require('inquirer')
+const { printTable } = require('console-table-printer');
+const prompt = require('prompt-sync')();
 
 
 function getTitle(){
@@ -17,10 +19,31 @@ function getTitle(){
     )
 }
 
+function inputBillAmount(){
+    let billAmount = prompt('Bill Amount? ');
+    billAmount = Number(billAmount)
+    return billAmount
+}
 
+function inputTip(){
+    let tip = prompt('Tip(%)?')
+    tip = Number(tip)
+    return tip
+}
+
+function getTable(amount,tip,realTip,total){
+    const testCases = [
+      { 'Bill Amount': "$"+ amount , 'Tip (%)': tip+"%" , Tip: "$"+realTip, Total: "$"+total },
+    ];
+    
+    return printTable(testCases)
+  }
 
 
 
 module.exports = {
-    getTitle
+    getTitle,
+    getTable,
+    inputBillAmount,
+    inputTip
 }
