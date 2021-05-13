@@ -19,15 +19,25 @@ function getTitle(){
     )
 }
 
-function inputBillAmount(){
-    let billAmount = prompt('Bill Amount? ');
-    billAmount = Number(billAmount)
+function inputBillAmount(value){
+    let billAmount = prompt('Bill Amount? ('+value+') ');
+    if (billAmount===""){
+        billAmount =value
+    }
+    else{
+        billAmount = Number(billAmount)
+    }
     return billAmount
 }
 
-function inputTip(){
-    let tip = prompt('Tip(%)?')
-    tip = Number(tip)
+function inputTip(value){
+    let tip = prompt('Tip(%)? ('+value+') ')
+    if (tip===""){
+        tip = value
+    }
+    else{
+        tip = Number(tip)
+    }
     return tip
 }
 
