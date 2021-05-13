@@ -50,11 +50,11 @@ function getTable(amount,tip,realTip,total){
   }
 
 function afterInputBillAmount(amount){
-    return chalk.green("¿ ")+'Bill Amount? '+ chalk.blue('('+amount+') ' )
+    return chalk.green("¿ ")+'Bill Amount? '+ chalk.green('('+amount+') ' )
 }
 
 function afterInputTip(tip){
-    return chalk.green("¿ ")+'Tip(%)? '+ chalk.blue('('+tip+') ' )
+    return chalk.green("¿ ")+'Tip(%)? '+ chalk.green('('+tip+') ' )
 }
 
 module.exports = {
